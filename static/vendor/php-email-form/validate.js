@@ -113,6 +113,13 @@ jQuery(document).ready(function($) {
       this_form.find('.sent-message').slideUp();
     }, 3300);
 
+    $.ajax({
+      type: "POST",
+      url: action,
+      data: str,
+      success: function (msg) {
+      }
+    });
     return false;
   });
 
