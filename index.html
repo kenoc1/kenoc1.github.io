@@ -364,40 +364,41 @@
 
                 <div class="col-lg-8 mt-5 mt-lg-0">
 
-                    <form action="send_form" method="post" role="form" class="php-email-form" id="my_form">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSczB3FIWfm65VWpkoiQL7tlUWYcPda26YYPPxDqkUmZbYNwVg/formResponse" method="post" class="php-email-form" id="my_form" target="hidden_iframe" onsubmit="submitted=true;">
                         <div class="form-row">
                             <div class="col-md-6 form-group">
-                                <input disabled type="text" name="name" id="name" class="form-control" id="name"
+                                <input  type="text" name="entry.2116052852" id="entry.2116052852" class="form-control"
                                        placeholder="Dein Name"
                                        data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input disabled type="email" class="form-control" name="email" id="email"
+                                <input  type="email" class="form-control" name="entry.1558582620" id="entry.1558582620"
                                        placeholder="Deine E-Mail" data-rule="email"
                                        data-msg="Please enter a valid email"/>
                                 <div class="validate"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input disabled type="text" class="form-control" name="subject" id="subject" placeholder="Betreff"
+                            <input  type="text" class="form-control" name="entry.288713975" id="entry.288713975" placeholder="Betreff"
                                    data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject"/>
                             <div class="validate"></div>
                         </div>
                         <div class="form-group">
-                            <textarea disabled class="form-control" name="message" rows="5" data-rule="required"
+                            <textarea  class="form-control" name="entry.1060472253" id="entry.1060472253" rows="5" data-rule="required"
                                       data-msg="Please write something for us" placeholder="Message - Sending messages via contact form isn´t available"></textarea>
                             <div class="validate"></div>
                         </div>
                         <div class="mb-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="sent-message">Deine Nachricht wurde erfolgreich übermittelt!</div>
                         </div>
                         <div class="text-center">
-                            <button disabled id="submitMessage" name="submitMessage" type="submit">Send Message</button>
+                            <button id="submitMessage" name="submitMessage" value="submit" type="submit">Nachricht senden</button>
                         </div>
                     </form>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;" onload="if(submitted){}"> </iframe>
 
                 </div>
 
@@ -456,42 +457,9 @@
 <script src="static/js/main.js"></script>
 
 <script>
-    jQuery(document).ready(function ($) {
-        $("#my_form").submit(function (event) {
-            // Standard-Aktion abbrechen
-            event.preventDefault();
-
-            // Formular per AJAX senden
-            var form = $(this);
-            var data = getFormData(form)
-            console.log(data)
-            $.ajax({
-                type: 'POST',
-                url: form.prop('action'),
-                dataType: "json",
-                data: JSON.stringify(data),
-                contentType: 'application/json;charset=UTF-8',
-                encode: true
-            }).done(function (data) {
-                // Aktionen bei Erfolg
-                console.log('done: ' + data);
-            }).fail(function (data) {
-                // Aktionen bei einem Fehler
-                console.log('fail: ' + data);
-            });
-        });
+    $('#my_form').on('submit', function (e){
+        // $('#my_form').fadeOut(2000)
     });
-
-    function getFormData($form) {
-        var unindexed_array = $form.serializeArray();
-        var indexed_array = {};
-
-        $.map(unindexed_array, function (n, i) {
-            indexed_array[n['name']] = n['value'];
-        });
-
-        return indexed_array;
-    }
 </script>
 
 </body>
