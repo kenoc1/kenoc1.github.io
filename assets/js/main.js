@@ -17,19 +17,6 @@
   });
 
   // mulit-language
-  var language; 
-  function getLanguage() {
-    (localStorage.getItem('language') == null) ? setLanguage('de') : false;
-    $.ajax({ 
-    url:  '/js/language/' +  localStorage.getItem('language') + '.json', 
-    dataType: 'json', async: false, dataType: 'json', 
-    success: function (lang) { language = lang } });
-  }
-
-  function setLanguage(lang) {
-  localStorage.setItem('language', lang);
-  }
-
   $(document).ready(function(){
     $('#descriptionsAbout').text(language.descriptions.about);
   });
