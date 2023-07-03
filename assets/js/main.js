@@ -17,9 +17,9 @@
   });
 
   // mulit-language
-  $(document).ready(function(){
-    $('#descriptionsAbout').text(language.descriptions.about);
-  });
+  //$(document).ready(function(){
+  //  $('#descriptionsAbout').text(language.descriptions.about);
+  //});
 
   // Hero typed
   if ($('.typed').length) {
