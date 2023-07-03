@@ -1,0 +1,18 @@
+{ 
+    "date": "Date", 
+    "save": "Save",
+    "cancel": "Cancel",
+    "descriptions":{
+        "about": "Hallo, ich bin Keno ;) Hauptberuflich bin ich Cloud Engineer. Ich habe innerhalb des Studiengangs Wirtschaftsinformatik sowohl Themen der Informatik, als auch Betriebswirtschaft behandelt. Mich interessieren vor allem unternemensgetriebene Themen die den Einsatz von IT und deren Einsatzmöglichkeiten in Unternehmen verbessern.",
+        "aboutGraduation1": "",
+        "aboutGraduation2": "",
+        "aboutGraduation3": "",
+        "aboutGraduation4": "",
+        "skills": "",
+        "addinitalSkills": ""
+    },    
+    "headings":{
+        "about": "xxx",
+        "skills": ""
+    }
+}
